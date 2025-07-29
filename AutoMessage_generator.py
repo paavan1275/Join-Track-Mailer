@@ -8,7 +8,7 @@ SMTP_PORT = 587
 EMAIL_SENDER = "your_email@gmail.com"        
 EMAIL_PASSWORD = "your_app_password_here"      
 
-csv_file = r"C:\Users\paava\OneDrive\Documents\Java Programs\Python Projects\Personalized_Messages.csv"
+csv_file = r"enter_path_for_your_file.csv"
 df_messages = pd.read_csv(csv_file)
 
 def send_email(to_email, subject, message_body):
@@ -25,7 +25,7 @@ def send_email(to_email, subject, message_body):
             server.send_message(msg)
         print(f"✅ Email sent to {to_email}")
     except Exception as e:
-        print(f"❌ Failed to send to {to_email}: {e}")
+        print("Failed to send to {to_email}: {e}")
 
 # === LOOP TO SEND ALL EMAILS ===
 for index, row in df_messages.iterrows():
